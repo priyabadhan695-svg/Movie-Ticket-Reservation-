@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block title %}My Bookings{% endblock %}{% block content %}
+<h1>📋 My Bookings</h1>
+{% if bookings %}<div class="table-wrap"><table><thead><tr><th>ID</th><th>Movie</th><th>Date</th><th>Time</th><th>Seats</th><th>Total</th><th>Booked At</th><th>Action</th></tr></thead><tbody>
+{% for b in bookings %}<tr><td>{{ b.id }}</td><td>{{ b.title }}</td><td>{{ b.date }}</td><td>{{ b.time }}</td><td>{{ b.seats_booked }}</td><td>${{ '%.2f'|format(b.total_price) }}</td><td>{{ b.booking_time }}</td><td><form method="post" action="{{ url_for('cancel_booking', booking_id=b.id) }}"><button class="danger small">Cancel</button></form></td></tr>{% endfor %}
+</tbody></table></div>{% else %}<div class="empty">You have not made any bookings yet.</div>{% endif %}
+{% endblock %}

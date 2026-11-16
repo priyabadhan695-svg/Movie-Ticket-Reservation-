@@ -1,0 +1,7 @@
+{% extends "base.html" %}{% block title %}Login{% endblock %}{% block content %}
+<div class="form-card"><h1>Login</h1><form method="post">
+<label>Username<input name="username" required autocomplete="username"></label>
+<label>Password<input type="password" name="password" required autocomplete="current-password"></label>
+<button class="wide">Login</button></form><p>New user? <a href="{{ url_for('register') }}">Create an account</a></p>
+<p class="hint">Admin demo account from the original project: admin / admin. Change it before public deployment.</p></div>
+{% endblock %}
