@@ -1,7 +1,0 @@
-{% extends "base.html" %}{% block title %}Register{% endblock %}{% block content %}
-<div class="form-card"><h1>Create Account</h1><form method="post">
-<label>Username<input name="username" required></label>
-<label>Password<input type="password" name="password" minlength="4" required></label>
-<label>Confirm Password<input type="password" name="confirm" minlength="4" required></label>
-<button class="wide">Register</button></form><p>Already registered? <a href="{{ url_for('login') }}">Login</a></p></div>
-{% endblock %}
